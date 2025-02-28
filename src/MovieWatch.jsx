@@ -1,5 +1,11 @@
+import Heading from "./Heading";
+
 const MovieWatch = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Heading />
+    </div>
+  );
 };
 
 export default MovieWatch;
