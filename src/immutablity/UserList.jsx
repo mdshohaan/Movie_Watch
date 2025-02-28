@@ -10,6 +10,18 @@ const UserList = () => {
   ]);
   function changeUser(id, name) {
     console.log(id, name);
+    const newUser = [...users]; // shallow copy  of users
+    const found = newUser.find((user) => user.id === id);
+    found.name = name;
+    setUsers(newUser);
+  }
+  function addUser() {
+    const newUser = {
+      id: crypto.randomUUID(),
+      name: "Jack",
+      address: "Titanic",
+    };
+    setUsers([...users, newUser]);
   }
   return (
     <div className="flex flex-col">
@@ -28,6 +40,9 @@ const UserList = () => {
           </li>
         ))}
       </ul>
+      <button className="cursor-pointer" onClick={addUser}>
+        Add
+      </button>
     </div>
   );
 };
