@@ -18,7 +18,7 @@ Button.propTypes = {
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
 };
-
+ 
 export default function Navbar() {
   return (
     <div className="flex gap-1.5 border" onClick={() => {

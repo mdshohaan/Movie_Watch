@@ -1,11 +1,9 @@
-import Navbar from "./Navbar";
-import Register from "./Register";
+import UserList from "./immutablity/UserList";
 
 function App() {
   return (
-    <div className="flex flex-col items-center gap-10 m-3">
-      <Navbar />
-      <Register />
+    <div>
+      <UserList />
     </div>
   );
 }
