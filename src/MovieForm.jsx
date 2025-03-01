@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function MovieForm() {
+function MovieForm({ addMovie }) {
   const [movieData, setMovieData] = useState({
     title: "",
     ott: "",
@@ -13,6 +13,9 @@ function MovieForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(movieData);
+    if (!movieData?.title.trim() || movieData?.ott.trim()) return;
+    addMovie(movieData);
+    setMovieData({ ...movieData, title: "", ott: "" });
   };
   return (
     <form
